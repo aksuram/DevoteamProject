@@ -1,3 +1,5 @@
+using WebApi.Interfaces;
+using WebApi.Services;
 
 namespace WebApi
 {
@@ -8,6 +10,7 @@ namespace WebApi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddScoped<IDataValidationService, DataValidationService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
